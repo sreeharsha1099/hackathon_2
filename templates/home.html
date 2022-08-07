@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Insurance Bill</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict House Price</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="number" name="MsSubClass" placeholder="MsSubClass: Input b/w 20 and 190" required="required" /><br>
+      <input type="number" name="LotArea" placeholder="LotArea: Input b/w 1300 and 215245" required="required" /><br>
+        <form>
+		<label> Select Street </label>
+		<select>
+		<option value = "Grvl"> Grvl
+		</option>
+		<option value = "Pava"> Pava
+		</option>
+		</select>
+		</form>
+		<form>
+		<label> Select LotShape </label>
+		<select>
+		<option value = "IR1"> IR1
+		</option>
+		<option value = "IR2"> IR2
+		</option>
+		<option value = "IR3"> IR3
+		</option>
+		<option value = "Reg"> Reg
+		</option>
+		</select>
+		</form>
+		<form>
+		<label> Select HouseStyle </label>
+		<select>
+		<option value = "1.5Fin"> 1.5Fin
+		</option>
+		<option value = "1.5Unf"> 1.5Unf
+		</option>
+		<option value = "1Story"> 1Story
+		</option>
+		<option value = "2.5Fin"> 2.5Fin
+		</option>
+		<option value = "2Story"> 2Story
+		</option>
+		<option value = "SFoyer"> SFoyer 
+		</option>
+		<option value = "SLvl"> SLvl
+		</option>
+		</select>
+		</form>
+		<input type="number" name="OverQual" placeholder="Input b/w 1 and 10" required="required" /><br>
+		<input type="number" name="OverallCond" placeholder="Input b/w 1 and 9" required="required" /><br>
+		<input type="number" name="YearBuilt" placeholder="Input b/w 1872 and 2010" required="required" /><br>
+		<form>
+		<label> Select RoofStyle </label>
+		<select>
+		<option value = "Flat"> Flat
+		</option>
+		<option value = "Gamble"> Gamble
+		</option>
+		<option value = "Gambrel"> Gambrel
+		</option>
+		<option value = "Hip"> Hip
+		</option>
+		<option value = "Mansard"> Mansard
+		</option>
+		<option value = "Shed"> Shed
+		</option>
+		</select>
+		</form>
+		<input type="number" name="FullBathroom" placeholder="FullBathroom: Input b/w 0 and 3" required="required" /><br>
+		<input type="number" name="Bedroom" placeholder="Bedroom: Input b/w 0 and 8" required="required" /><br>
+		<form>
+		<label> Select Kitchen </label>
+		<select>
+		<option value = "Ex"> Ex
+		</option>
+		<option value = "Fa"> Fa
+		</option>
+		<option value = "Gd"> Gd
+		</option>
+		<option value = "Ta"> Ta
+		</option>
+		</select>
+		</form>
+		<input type="number" name="GarageCars" placeholder="GarageCars: Input b/w 0 and 4" required="required" /><br>
+		<form>
+		<label> Select Kitchen </label>
+		<select>
+		<option value = "2006"> 2006
+		</option>
+		<option value = "2007"> 2007
+		</option>
+		<option value = "2008"> 2008
+		</option>
+		<option value = "2009"> 2009
+		</option>
+		<option value = "2010"> 2010
+		</option>
+		</select>
+		</form>
+		<form>
+		<label> Select SaleCondition </label>
+		<select>
+		<option value = "Abnormal"> Abnormal
+		</option>
+		<option value = "Adjland"> Adjland
+		</option>
+		<option value = "Alloca"> Alloca
+		</option>
+		<option value = "Family"> Family
+		</option>
+		<option value = "Normal"> Normal
+		</option>
+		<option value = "Partial"> Partial
+		</option>
+		</select>
+		</form>
+		
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>
